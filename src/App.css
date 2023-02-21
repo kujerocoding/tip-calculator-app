@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root{
+    --FF: 'Space Mono', monospace;
+    --FS: 24px;
+    --STRONGCYAN: hsl(172, 67%, 45%);
+    --VERYDARKCYAN: hsl(183, 100%, 15%);
+    --DARKGRAYISHCYAN: hsl(186, 14%, 43%);
+    --GRAYISHCYAN: hsl(184, 14%, 56%);
+    --LIGHTGRAYISHCYAN: hsl(185, 41%, 84%);
+    --VERYLIGHTCYAN: hsl(189, 41%, 97%);   
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
