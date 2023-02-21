@@ -23,8 +23,21 @@ const App = () => {
           <input type="number" />
         </form>
         <div className='result--container'>
-          <p>Tip amount / person -$$$-</p>
-          <p>Total / person -$$$-</p>
+          <div  className='tiptotal--container'>
+            <p>Tip amount 
+              <br />
+              <span className='text--perperson'>/ person</span>
+            </p>
+            <p className='text--amount'>$4.27</p>
+          </div>    
+          <div className='tiptotal--container'>
+              <p>Total
+                <br />
+                <span className='text--perperson'>/ person</span>
+              </p>
+              <p className='text--amount'>$4.27</p>
+          </div>
+          
           <button>Reset</button>
         </div>
       </div>

@@ -114,3 +114,42 @@ fieldset > label{
     background-position: center;
     background-size: 30%;
 }
+
+.result--container{
+    padding: 20px;
+    margin-block: 30px;
+    border-radius: inherit;
+    font-size: .9rem;
+    color: var(--LIGHTGRAYISHCYAN);
+}
+
+.text--perperson{
+    color: var(--DARKGRAYISHCYAN);
+    font-size: .7rem;
+}
+
+.text--amount{
+    font-size: 1.5rem;
+    color: var(--STRONGCYAN);
+}
+
+.tiptotal--container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+button{
+    border: 1px solid transparent;
+    background-color: var(--STRONGCYAN);
+    width: 100%;
+    padding-block: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: var(--VERYDARKCYAN);
+    font-weight: bolder;
+    font-family: inherit;
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
