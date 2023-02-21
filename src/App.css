@@ -63,7 +63,7 @@ input {
     border-radius: 10px;
 }
 
-.label--bill{
+.label--bill, .label--number--people{
     position: relative;
 }
 
@@ -72,7 +72,7 @@ input {
     width: 50px;
     height: 50px;
     /* background-color: red; */
-    top: 40px;
+    top: 50px;
     left: 0;
     position: absolute;
     background-image: url('/src/assets/images/icon-dollar.svg');
@@ -94,4 +94,23 @@ fieldset > label{
     text-align: center;
     color: var(--LIGHTGRAYISHCYAN);
     padding-block: 10px;
+}
+
+.label--bill, legend, .label--number--people{
+    font-size: 1rem;
+    padding-block: 10px;
+}
+
+.label--number--people::before{
+    content: "";
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+    top: 50px;
+    left: 0;
+    position: absolute;
+    background-image: url('/src/assets/images/icon-person.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
 }

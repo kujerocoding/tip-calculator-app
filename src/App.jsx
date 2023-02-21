@@ -19,7 +19,7 @@ const App = () => {
             <label><input id='fifty' type="radio" />50%</label>
             <label><input id='custom' type="radio" />Custom</label>
           </fieldset>
-          <label htmlFor="">Number of People</label>
+          <label className="label--number--people" htmlFor="">Number of People</label>
           <input type="number" />
         </form>
         <div className='result--container'>
