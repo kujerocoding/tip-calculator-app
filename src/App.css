@@ -16,3 +16,37 @@
     margin: 0;
     padding: 0;
 }
+
+body{
+    background-color: var(--LIGHTGRAYISHCYAN);
+    font-size: var(--FS);
+    font-family: var(--FF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app--container{
+    background-color: var(--VERYLIGHTCYAN);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+.app--title{
+    text-transform: uppercase;
+    color: var(--VERYDARKCYAN);
+    font-size: 1.7rem;
+    text-align: center;
+    letter-spacing: .5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.result--container{
+    background-color: var(--VERYDARKCYAN);
+}

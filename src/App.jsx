@@ -4,7 +4,8 @@ import './App.css'
 const App = () => {
   return (
     <div className='main--container'>
-      <h1>Splitter</h1>
+      <p className='app--title'>Spli</p>
+      <p className='app--title'>tter</p>
       <div className='app--container'>
         <form>
           <label>Bill</label>
