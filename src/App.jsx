@@ -3,11 +3,18 @@ import './App.css'
 
 const App = () => {
 
-  const [formData, setFormData] = useState({
-    billAmount: 0,
-    peopleCount: 1,
-    tipPercentage: 0
-  })
+  const getFormValue = () => {
+    return {
+      billAmount: 0,
+      peopleCount: 0,
+      tipPercentage: 0
+    }
+  }
+
+  const [formData, setFormData] = useState(getFormValue)
+  const [isReset, setIsReset] = useState(true)
+
+  console.log('fresh form', formData)
 
   const[result, setResult] = useState({
     tipPerPerson: 0,
@@ -21,11 +28,12 @@ const App = () => {
     setFormData(prevformData => {
       return {...prevformData, [name]: value}
     })
+    console.log(e)
   }
 
 
-  console.log(formData)
-  console.log(result)
+  //console.log(formData)
+  //console.log(result)
 
   function calculateTip(){
     setResult(prevResult => {
@@ -39,29 +47,35 @@ const App = () => {
 
   useEffect(() => {
     calculateTip()
-    console.log('result is ', result)
+    //console.log('result is ', result)
   },[formData])
 
 
+  function onReset(){
+    setFormData(getFormValue)
+    setIsReset(prevState => !prevState)
+   console.log('formdata after reset',formData)
+  }
+
   return (
     <div className='main--container'>
-      <img src="./src/assets/images/logo.svg" alt="" />
+      <img src="./src/assets/images/logo.svg" alt="Splitter logo" />
       <div className='app--container'>
         <form>
           <label className="label--bill">Bill</label>
-          <input name="billAmount" type="number" onChange={handleChange}/>
+          <input name="billAmount" type="number" onChange={handleChange} placeholder="0" value={formData.billAmount}/>
           <fieldset>
             <legend>Select Tip %</legend>
-            
-            <label><input name="tipPercentage" value={0.05} id='five' type="radio" onChange={handleChange}/>5%</label>
+            <label><input name="tipPercentage" value="0.05" id='five' type="radio" onChange={handleChange}/>5%</label>
             <label><input name="tipPercentage" value="0.1" id='ten' type="radio" onChange={handleChange}/>10%</label>
             <label><input name="tipPercentage" value="0.15" id='fifteen' type="radio" onChange={handleChange}/>15%</label>
             <label><input name="tipPercentage" value="0.25" id='twentyfive' type="radio" onChange={handleChange}/>25%</label>            
             <label><input name="tipPercentage" value="0.50" id='fifty' type="radio" onChange={handleChange}/>50%</label>
-            <label><input name="tipPercentage" value="" id='custom' type="radio" onChange={handleChange}/>Custom</label>
+            <label>
+              <input name="tipPercentage" value="" id='custom' type="radio" onChange={handleChange}/>Custom</label>
           </fieldset>
-          <label className="label--number--people" htmlFor="">Number of People</label>
-          <input name="peopleCount" type="number" onChange={handleChange}/>
+          <label className="label--number--people" >Number of People</label>
+          <input name="peopleCount" type="number" required  min="0" max="100" placeholder='0' value={formData.peopleCount} onChange={handleChange}/>
         </form>
         <div className='result--container'>
           <div  className='tiptotal--container'>
@@ -69,17 +83,17 @@ const App = () => {
               <br />
               <span className='text--perperson'>/ person</span>
             </p>
-            <p className='text--amount'>${result.tipPerPerson}</p>
+            <p className='text--amount'>${formData.billAmount > 0 && formData.peopleCount > 0 ? result.tipPerPerson : "0.00"}</p>
           </div>    
           <div className='tiptotal--container'>
               <p>Total
                 <br />
                 <span className='text--perperson'>/ person</span>
               </p>
-              <p className='text--amount'>${result.tipTotalPerson}</p>
+              <p className='text--amount'>${formData.billAmount > 0 && formData.peopleCount > 0 ? result.tipTotalPerson : "0.00"}</p>
           </div>
           
-          <button onClick={calculateTip}>Reset</button>
+          <button onClick={onReset}>Reset</button>
         </div>
       </div>
     </div>
