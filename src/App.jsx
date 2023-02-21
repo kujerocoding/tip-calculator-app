@@ -9,15 +9,16 @@ const App = () => {
         <form>
           <label className="label--bill">Bill</label>
           <input type="text" />
-          <label htmlFor="">Select Tip %</label>
-          <div>
-            <p>5%</p>
-            <p>10%</p>
-            <p>15%</p>
-            <p>25%</p>
-            <p>50%</p>
-            <p>Custom</p>
-          </div>
+          <fieldset>
+            <legend>Select Tip %</legend>
+            
+            <label><input id='five' type="radio" />5%</label>
+            <label><input id='ten' type="radio" />10%</label>
+            <label><input id='fifteen' type="radio" />15%</label>
+            <label><input id='twentyfive' type="radio" />25%</label>            
+            <label><input id='fifty' type="radio" />50%</label>
+            <label><input id='custom' type="radio" />Custom</label>
+          </fieldset>
           <label htmlFor="">Number of People</label>
           <input type="number" />
         </form>

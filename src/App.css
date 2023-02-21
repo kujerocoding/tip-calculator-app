@@ -80,3 +80,18 @@ input {
     background-position: center;
     background-size: 30%;
 }
+
+fieldset{
+    border: 1px solid transparent;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+fieldset > label{
+    background-color: var(--VERYDARKCYAN);
+    border-radius: 5px;
+    text-align: center;
+    color: var(--LIGHTGRAYISHCYAN);
+    padding-block: 10px;
+}
