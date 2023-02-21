@@ -4,11 +4,10 @@ import './App.css'
 const App = () => {
   return (
     <div className='main--container'>
-      <p className='app--title'>Spli</p>
-      <p className='app--title'>tter</p>
+      <img src="./src/assets/images/logo.svg" alt="" />
       <div className='app--container'>
         <form>
-          <label>Bill</label>
+          <label className="label--bill">Bill</label>
           <input type="text" />
           <label htmlFor="">Select Tip %</label>
           <div>
