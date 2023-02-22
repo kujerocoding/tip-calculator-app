@@ -14,7 +14,7 @@ const App = () => {
   const [formData, setFormData] = useState(getFormValue)
   const [isReset, setIsReset] = useState(true)
 
-  console.log('fresh form', formData)
+  //console.log('fresh form', formData)
 
   const[result, setResult] = useState({
     tipPerPerson: 0,
@@ -28,7 +28,7 @@ const App = () => {
     setFormData(prevformData => {
       return {...prevformData, [name]: value}
     })
-    console.log(e)
+    //console.log(e)
   }
 
 
@@ -47,7 +47,7 @@ const App = () => {
 
   useEffect(() => {
     calculateTip()
-    //console.log('result is ', result)
+    console.log('calculate ran', formData)
   },[formData])
 
 
@@ -63,7 +63,7 @@ const App = () => {
       <div className='app--container'>
         <form>
           <label className="label--bill">Bill</label>
-          <input name="billAmount" type="number" onChange={handleChange} placeholder="0" value={formData.billAmount}/>
+          <input name="billAmount" type="number" onChange={handleChange} value={formData.billAmount}/>
           <fieldset>
             <legend>Select Tip %</legend>
             <label><input name="tipPercentage" value="0.05" id='five' type="radio" onChange={handleChange}/>5%</label>
@@ -75,7 +75,7 @@ const App = () => {
               <input name="tipPercentage" value="" id='custom' type="radio" onChange={handleChange}/>Custom</label>
           </fieldset>
           <label className="label--number--people" >Number of People</label>
-          <input name="peopleCount" type="number" required  min="0" max="100" placeholder='0' value={formData.peopleCount} onChange={handleChange}/>
+          <input name="peopleCount" type="number" required  min="0" max="100" value={formData.peopleCount} onChange={handleChange}/>
         </form>
         <div className='result--container'>
           <div  className='tiptotal--container'>
