@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
+import Form from './Form'
 
 const App = () => {
 
@@ -12,9 +13,7 @@ const App = () => {
   }
 
   const [formData, setFormData] = useState(getFormValue)
-  const [isReset, setIsReset] = useState(true)
-
-  //console.log('fresh form', formData)
+  const [formKey, setFormKey] = useState(10)
 
   const[result, setResult] = useState({
     tipPerPerson: 0,
@@ -28,12 +27,7 @@ const App = () => {
     setFormData(prevformData => {
       return {...prevformData, [name]: value}
     })
-    //console.log(e)
   }
-
-
-  //console.log(formData)
-  //console.log(result)
 
   function calculateTip(){
     setResult(prevResult => {
@@ -52,50 +46,23 @@ const App = () => {
 
 
   function onReset(){
-    setFormData(getFormValue)
-    setIsReset(prevState => !prevState)
-   console.log('formdata after reset',formData)
+    setFormData(getFormValue())
+    setFormKey(prevKey => prevKey + 1)
   }
 
   return (
     <div className='main--container'>
       <img src="./src/assets/images/logo.svg" alt="Splitter logo" />
-      <div className='app--container'>
-        <form>
-          <label className="label--bill">Bill</label>
-          <input name="billAmount" type="number" onChange={handleChange} value={formData.billAmount}/>
-          <fieldset>
-            <legend>Select Tip %</legend>
-            <label><input name="tipPercentage" value="0.05" id='five' type="radio" onChange={handleChange}/>5%</label>
-            <label><input name="tipPercentage" value="0.1" id='ten' type="radio" onChange={handleChange}/>10%</label>
-            <label><input name="tipPercentage" value="0.15" id='fifteen' type="radio" onChange={handleChange}/>15%</label>
-            <label><input name="tipPercentage" value="0.25" id='twentyfive' type="radio" onChange={handleChange}/>25%</label>            
-            <label><input name="tipPercentage" value="0.50" id='fifty' type="radio" onChange={handleChange}/>50%</label>
-            <label>
-              <input name="tipPercentage" value="" id='custom' type="radio" onChange={handleChange}/>Custom</label>
-          </fieldset>
-          <label className="label--number--people" >Number of People</label>
-          <input name="peopleCount" type="number" required  min="0" max="100" value={formData.peopleCount} onChange={handleChange}/>
-        </form>
-        <div className='result--container'>
-          <div  className='tiptotal--container'>
-            <p>Tip amount 
-              <br />
-              <span className='text--perperson'>/ person</span>
-            </p>
-            <p className='text--amount'>${formData.billAmount > 0 && formData.peopleCount > 0 ? result.tipPerPerson : "0.00"}</p>
-          </div>    
-          <div className='tiptotal--container'>
-              <p>Total
-                <br />
-                <span className='text--perperson'>/ person</span>
-              </p>
-              <p className='text--amount'>${formData.billAmount > 0 && formData.peopleCount > 0 ? result.tipTotalPerson : "0.00"}</p>
-          </div>
-          
-          <button onClick={onReset}>Reset</button>
-        </div>
-      </div>
+      <Form handleChange={handleChange} 
+            onReset={onReset} 
+            key={formKey}
+            billAmount={formData.billAmount}
+            tipPerPerson={result.tipPerPerson}
+            peopleCount={formData.peopleCount}
+            tipTotalAmount={result.tipTotalAmount}
+            tipPercentage={formData.tipPercentage}
+            tipTotalPerson={result.tipTotalPerson}
+            />
     </div>
   )
 }
