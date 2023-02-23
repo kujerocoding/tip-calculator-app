@@ -7,8 +7,8 @@ const App = () => {
   const getFormValue = () => {
     return {
       billAmount: 0,
-      peopleCount: 0,
-      tipPercentage: 0
+      peopleCount: "",
+      tipPercentage: ""
     }
   }
 
