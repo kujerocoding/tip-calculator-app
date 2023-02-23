@@ -154,7 +154,22 @@ button{
     margin-top: 30px;
 }
 
-.shit--label:focus-within {
+.label--radio{
+    cursor: pointer;
+}
+
+
+.label--radio:focus-within, .label--radio:hover {
     background-color: var(--STRONGCYAN);
     color: var(--VERYDARKCYAN);
+}
+
+input[type=radio]{
+    position: absolute;
+    appearance: none;
+    background-color: transparent;
+}
+
+input[type=radio]:checked{
+    background-color: transparent;
 }
