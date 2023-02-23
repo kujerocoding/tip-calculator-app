@@ -63,7 +63,7 @@ input {
     border-radius: 10px;
 }
 
-input:focus{
+.input--bill:focus, .input--custom:focus, .input--peopleCount:focus{
     outline: 3px solid var(--STRONGCYAN);
 }
 

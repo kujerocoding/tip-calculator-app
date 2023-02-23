@@ -5,7 +5,7 @@ const Form = (props) => {
   const isBlank = props.billAmount !== 0 || props.tipPercentage !== 0 || props.peopleCount !== 0 ? false : true
 
   const isZero =   {
-    outline: props.peopleCount === "0" ? "2px solid #ff0000b4" : ""
+    outline: props.peopleCount === "0" ? "3px solid #ff0000b4" : ""
   } 
 
   return (
@@ -13,7 +13,7 @@ const Form = (props) => {
       <div className='app--container'>
         <form>
           <label className="label--bill">Bill</label>
-          <input name="billAmount" type="number" onChange={props.handleChange} placeholder='0' /* value={formData.billAmount} *//>
+          <input className='input--bill' name="billAmount" type="number" onChange={props.handleChange} placeholder='0' /* value={formData.billAmount} *//>
           <fieldset>
             <legend>Select Tip %</legend>
             <label className='label--radio'><input name="tipPercentage" value="5" id='five' type="radio" onChange={props.handleChange}/>5%</label>
@@ -27,7 +27,7 @@ const Form = (props) => {
           <label className="label--number--people" >Number of People 
           {props.peopleCount === "0" && <span className='text--zero'>Can't be zero</span>}
           </label>  
-          <input clasName="input--peopleCount" style={isZero} name="peopleCount" type="number" required  min="0" max="100" placeholder='0' /* value={formData.peopleCount} */ onChange={props.handleChange}/>
+          <input className="input--peopleCount" style={isZero} name="peopleCount" type="number" required  min="0" max="100" placeholder='0' /* value={formData.peopleCount} */ onChange={props.handleChange}/>
           
         </form>
         <div className='result--container'>
