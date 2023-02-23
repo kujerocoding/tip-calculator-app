@@ -27,7 +27,7 @@ const Form = (props) => {
           <label className="label--number--people" >Number of People 
           {props.peopleCount === "0" && <span className='text--zero'>Can't be zero</span>}
           </label>  
-          <input className="input--peopleCount" style={isZero} name="peopleCount" type="number" required  min="0" max="100" placeholder='0' /* value={formData.peopleCount} */ onChange={props.handleChange}/>
+          <input className="input--peopleCount" style={isZero} name="peopleCount" type="number"   min="0" max="100" placeholder='0' /* value={formData.peopleCount} */ onChange={props.handleChange}/>
           
         </form>
         <div className='result--container'>
