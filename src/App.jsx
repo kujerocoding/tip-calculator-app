@@ -32,7 +32,7 @@ const App = () => {
   function calculateTip(){
     setResult(prevResult => {
       return {...prevResult, 
-        tipTotalAmount: formData.billAmount * formData.tipPercentage,
+        tipTotalAmount: formData.billAmount * (formData.tipPercentage / 100),
         tipPerPerson: (result.tipTotalAmount / formData.peopleCount).toFixed(2),
         tipTotalPerson: ((result.tipTotalAmount + Number(formData.billAmount)) / formData.peopleCount).toFixed(2)
       }

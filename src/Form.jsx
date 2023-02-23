@@ -9,11 +9,11 @@ const Form = (props) => {
           <input name="billAmount" type="number" onChange={props.handleChange} placeholder='0' /* value={formData.billAmount} *//>
           <fieldset>
             <legend>Select Tip %</legend>
-            <label className='label--radio'><input name="tipPercentage" value="0.05" id='five' type="radio" onChange={props.handleChange}/>5%</label>
-            <label className='label--radio'><input name="tipPercentage" value="0.1" id='ten' type="radio" onChange={props.handleChange}/>10%</label>
-            <label className='label--radio'><input name="tipPercentage" value="0.15" id='fifteen' type="radio" onChange={props.handleChange}/>15%</label>
-            <label className='label--radio'><input name="tipPercentage" value="0.25" id='twentyfive' type="radio" onChange={props.handleChange}/>25%</label>            
-            <label className='label--radio'><input name="tipPercentage" value="0.50" id='fifty' type="radio" onChange={props.handleChange}/>50%</label>
+            <label className='label--radio'><input name="tipPercentage" value="5" id='five' type="radio" onChange={props.handleChange}/>5%</label>
+            <label className='label--radio'><input name="tipPercentage" value="10" id='ten' type="radio" onChange={props.handleChange}/>10%</label>
+            <label className='label--radio'><input name="tipPercentage" value="15" id='fifteen' type="radio" onChange={props.handleChange}/>15%</label>
+            <label className='label--radio'><input name="tipPercentage" value="25" id='twentyfive' type="radio" onChange={props.handleChange}/>25%</label>            
+            <label className='label--radio'><input name="tipPercentage" value="50" id='fifty' type="radio" onChange={props.handleChange}/>50%</label>
             <label className='label--custom'>
               <input className="input--custom" name="tipPercentage" id='custom' type="number" onChange={props.handleChange} placeholder="Custom"/></label>
           </fieldset>
