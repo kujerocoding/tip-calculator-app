@@ -2,7 +2,7 @@ import React from 'react'
 
 const Form = (props) => {
 
-  const isBlank = props.billAmount !== 0 || props.tipPercentage !== 0 || props.peopleCount !== 0 ? false : true
+  const isBlank = props.billAmount !== 0 || props.tipPercentage !== "" || props.peopleCount !== "" ? false : true
 
   const isZero =   {
     outline: props.peopleCount === "0" ? "3px solid #ff0000b4" : ""
