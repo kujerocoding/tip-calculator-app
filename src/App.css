@@ -158,7 +158,6 @@ button{
     cursor: pointer;
 }
 
-
 .label--radio:focus-within, .label--radio:hover {
     background-color: var(--STRONGCYAN);
     color: var(--VERYDARKCYAN);
@@ -168,8 +167,19 @@ input[type=radio]{
     position: absolute;
     appearance: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 input[type=radio]:checked{
     background-color: transparent;
+}
+
+.label--custom{
+    background-color: var(--LIGHTGRAYISHCYAN);
+    max-width: 100%;
+}
+
+.input--custom{
+    padding-block: 0;
+    width: 100%;
 }

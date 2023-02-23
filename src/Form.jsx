@@ -14,8 +14,8 @@ const Form = (props) => {
             <label className='label--radio'><input name="tipPercentage" value="0.15" id='fifteen' type="radio" onChange={props.handleChange}/>15%</label>
             <label className='label--radio'><input name="tipPercentage" value="0.25" id='twentyfive' type="radio" onChange={props.handleChange}/>25%</label>            
             <label className='label--radio'><input name="tipPercentage" value="0.50" id='fifty' type="radio" onChange={props.handleChange}/>50%</label>
-            <label>
-              <input name="tipPercentage" value="" id='custom' type="radio" onChange={props.handleChange}/>Custom</label>
+            <label className='label--custom'>
+              <input className="input--custom" name="tipPercentage" id='custom' type="number" onChange={props.handleChange} placeholder="Custom"/></label>
           </fieldset>
           <label className="label--number--people" >Number of People</label>
           <input name="peopleCount" type="number" required  min="0" max="100" placeholder='0' /* value={formData.peopleCount} */ onChange={props.handleChange}/>
