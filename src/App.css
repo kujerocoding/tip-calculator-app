@@ -201,6 +201,16 @@ button:disabled{
     opacity: .2;
 }
 
+.attribution{
+    font-size: 1rem;
+    margin-block: 50px;
+    color: var(--DARKGRAYISHCYAN);
+}
+
+.attribution > a{
+    color: var(--STRONGCYAN);
+}
+
 @media(min-width: 50em){
     .app--container{
         display: flex;

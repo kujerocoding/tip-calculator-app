@@ -63,6 +63,9 @@ const App = () => {
             tipPercentage={formData.tipPercentage}
             tipTotalPerson={result.tipTotalPerson}
             />
+      <div className='attribution'>
+            Challenge by <a href="https://www.frontendmentor.io/challenges" target="_blank">Frontend Mentor.</a> Coded by <a href='https://github.com/kujerocoding' target="_blank">kujerocoding</a>
+      </div>
     </div>
   )
 }
