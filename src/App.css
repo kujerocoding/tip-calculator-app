@@ -36,11 +36,12 @@ body{
 }
 
 .app--container{
-    background-color: var(--VERYLIGHTCYAN);
+    background-color: white;
     padding: 30px;
     border-radius: 15px;
     margin-top: 50px;
     color: var(--GRAYISHCYAN);
+    margin-inline: 20px;
 }
 
 form{
@@ -134,7 +135,7 @@ fieldset > label{
 }
 
 .text--amount{
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     color: var(--STRONGCYAN);
 }
 
@@ -198,4 +199,32 @@ input[type=radio]:checked{
 
 button:disabled{
     opacity: .2;
+}
+
+@media(min-width: 50em){
+    .app--container{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        max-width: 920px;
+    }
+
+    form, .result--container{
+        flex: 1 1 0;
+        margin: 0;
+    }
+
+    fieldset{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .result--container{
+        padding: 40px;
+    }
+
+    button{
+        margin-top: 50px;
+    }
+
+   
 }
