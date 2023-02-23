@@ -41,9 +41,7 @@ const App = () => {
 
   useEffect(() => {
     calculateTip()
-    console.log('calculate ran', formData)
   },[formData])
-
 
   function onReset(){
     setFormData(getFormValue())

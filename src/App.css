@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 :root{
+    --DARKGRAYISHCYAN: hsl(186, 14%, 43%);
     --FF: 'Space Mono', monospace;
     --FS: 24px;
-    --STRONGCYAN: hsl(172, 67%, 45%);
-    --VERYDARKCYAN: hsl(183, 100%, 15%);
-    --DARKGRAYISHCYAN: hsl(186, 14%, 43%);
     --GRAYISHCYAN: hsl(184, 14%, 56%);
     --LIGHTGRAYISHCYAN: hsl(185, 41%, 84%);
+    --STRONGCYAN: hsl(172, 67%, 45%);
+    --VERYDARKCYAN: hsl(183, 100%, 15%);
     --VERYLIGHTCYAN: hsl(189, 41%, 97%);   
 }
 
@@ -18,30 +18,30 @@
 }
 
 body{
-    background-color: var(--LIGHTGRAYISHCYAN);
-    font-size: var(--FS);
-    font-family: var(--FF);
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: var(--LIGHTGRAYISHCYAN);
+    display: flex;
+    font-family: var(--FF);
+    font-size: var(--FS);
+    justify-content: center;
     min-height: 100vh;
 }
 
 .main--container{
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin-block: 30px;
 }
 
 .app--container{
     background-color: white;
-    padding: 30px;
     border-radius: 15px;
-    margin-top: 50px;
     color: var(--GRAYISHCYAN);
     margin-inline: 20px;
+    margin-top: 50px;
+    padding: 30px;
 }
 
 form{
@@ -54,15 +54,15 @@ form{
 }
 
 input {
-    padding: 10px;
-    font-size: inherit;
-    text-align: right;
-    border: 1px solid transparent;
     background-color: var(--LIGHTGRAYISHCYAN);
-    color: var(--VERYDARKCYAN);
-    font-family: inherit;
     border-radius: 10px;
+    border: 1px solid transparent;
+    color: var(--VERYDARKCYAN);
     cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 10px;
+    text-align: right;
 }
 
 .input--bill:focus, .input--custom:focus, .input--peopleCount:focus{
@@ -73,33 +73,39 @@ input {
     position: relative;
 }
 
-.label--bill::before{
+.label--bill::before,.label--number--people::before{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
     content: "";
-    width: 50px;
     height: 50px;
-    /* background-color: red; */
-    top: 50px;
     left: 0;
     position: absolute;
+    top: 50px;
+    width: 50px;
+}
+
+.label--bill::before{
     background-image: url('/src/assets/images/icon-dollar.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 30%;
+}
+
+.label--number--people::before{
+    background-image: url('/src/assets/images/icon-person.svg');
 }
 
 fieldset{
     border: 1px solid transparent;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 fieldset > label{
     background-color: var(--VERYDARKCYAN);
     border-radius: 5px;
-    text-align: center;
     color: var(--LIGHTGRAYISHCYAN);
     padding-block: 10px;
+    text-align: center;
 }
 
 .label--bill, legend, .label--number--people{
@@ -107,26 +113,12 @@ fieldset > label{
     padding-block: 10px;
 }
 
-.label--number--people::before{
-    content: "";
-    width: 50px;
-    height: 50px;
-    /* background-color: red; */
-    top: 50px;
-    left: 0;
-    position: absolute;
-    background-image: url('/src/assets/images/icon-person.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 30%;
-}
-
 .result--container{
-    padding: 20px;
-    margin-block: 30px;
     border-radius: inherit;
-    font-size: .9rem;
     color: var(--LIGHTGRAYISHCYAN);
+    font-size: .9rem;
+    margin-block: 30px;
+    padding: 20px;
 }
 
 .text--perperson{
@@ -135,37 +127,37 @@ fieldset > label{
 }
 
 .text--amount{
-    font-size: clamp(1.5rem, 5vw, 3rem);
     color: var(--STRONGCYAN);
+    font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 .text--zero{
     color: #ff0000b4;
     position: absolute;
-    top: 10px;
     right: 0;
+    top: 10px;
 }
 
 .tiptotal--container{
-    margin-top: 20px;
+    align-items: end;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    margin-top: 20px;
 }
 
 button{
-    border: 1px solid transparent;
     background-color: var(--STRONGCYAN);
-    width: 100%;
-    padding-block: 10px;
     border-radius: 5px;
-    text-transform: uppercase;
+    border: 1px solid transparent;
     color: var(--VERYDARKCYAN);
-    font-weight: bolder;
+    cursor: pointer;
     font-family: inherit;
     font-size: 1.2rem;
+    font-weight: bolder;
     margin-top: 30px;
-    cursor: pointer;
+    padding-block: 10px;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 button:active{
@@ -182,10 +174,10 @@ button:active{
 }
 
 input[type=radio]{
-    position: absolute;
     appearance: none;
     background-color: transparent;
     cursor: pointer;
+    position: absolute;
 }
 
 input[type=radio]:checked{
@@ -202,9 +194,9 @@ button:disabled{
 }
 
 .attribution{
+    color: var(--DARKGRAYISHCYAN);
     font-size: 1rem;
     margin-block: 50px;
-    color: var(--DARKGRAYISHCYAN);
 }
 
 .attribution > a{
