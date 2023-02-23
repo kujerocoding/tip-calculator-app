@@ -153,3 +153,8 @@ button{
     font-size: 1.2rem;
     margin-top: 30px;
 }
+
+.shit--label:focus-within {
+    background-color: var(--STRONGCYAN);
+    color: var(--VERYDARKCYAN);
+}
