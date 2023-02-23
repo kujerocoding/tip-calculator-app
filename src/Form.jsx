@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Form = (props) => {
+
+  const isBlank = props.billAmount !== 0 || props.tipPercentage !== 0 || props.peopleCount !== 0 ? false : true
+
   return (
     
       <div className='app--container'>
@@ -36,7 +39,7 @@ const Form = (props) => {
               <p className='text--amount'>${props.billAmount > 0 && props.peopleCount > 0 ? props.tipTotalPerson : "0.00"}</p>
           </div>
           
-          <button onClick={props.onReset}>Reset</button>
+          <button disabled={isBlank} onClick={props.onReset}>Reset</button>
         </div>
       </div>
     
